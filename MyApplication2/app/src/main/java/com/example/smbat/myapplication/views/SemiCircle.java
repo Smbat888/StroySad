@@ -27,7 +27,7 @@ public class SemiCircle extends Drawable {
     }
 
     public SemiCircle() {
-        this(Color.BLUE, Direction.RIGHT);
+        this(Color.parseColor("#00ddff"), Direction.RIGHT);
     }
 
     public SemiCircle(int color, Direction angle) {
