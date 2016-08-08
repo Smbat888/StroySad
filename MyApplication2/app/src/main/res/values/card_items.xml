@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="card_items">
+        <item>@array/card_item_1</item>
+        <item>@array/card_item_2</item>
+        <item>@array/card_item_2</item>
+        <item>@array/card_item_2</item>
+        <item>@array/card_item_2</item>
+        <item>@array/card_item_2</item>
+        <item>@array/card_item_2</item>
+        <item>@array/card_item_2</item>
+        <item>@array/card_item_2</item>
+        <item>@array/card_item_2</item>
+        <item>@array/card_item_2</item>
+        <item>@array/card_item_2</item>
+    </array>
+    <string-array name="card_item_1">
+        <item>product_1</item>
+        <item>Product1</item>
+        <item>Price1</item>
+    </string-array>
+
+    <string-array name="card_item_2">
+        <item>product_2</item>
+        <item>Product2</item>
+        <item>Price2</item>
+    </string-array>
+</resources>
