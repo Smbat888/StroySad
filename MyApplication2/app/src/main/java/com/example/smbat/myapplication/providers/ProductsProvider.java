@@ -27,7 +27,7 @@ public class ProductsProvider {
     }
 
     @SuppressWarnings("ResourceType")
-    public ArrayList<ProductCard> getMenuItems() {
+    public ArrayList<ProductCard> getProductCards() {
         ArrayList<ProductCard> menuItems = new ArrayList<>();
         @SuppressLint("Recycle") TypedArray items = resources.obtainTypedArray(R.array.card_items);
         for (int index = 0; index < items.length(); ++index) {

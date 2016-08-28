@@ -11,6 +11,7 @@ import android.widget.TextView;
 import com.example.smbat.myapplication.R;
 import com.example.smbat.myapplication.models.ProductCard;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -18,9 +19,9 @@ import java.util.List;
  */
 public class RVAdapter extends RecyclerView.Adapter<RVAdapter.PersonViewHolder>{
 
-    List<ProductCard> persons;
+    ArrayList<ProductCard> persons;
     
-    RVAdapter(List<ProductCard> persons){
+    public RVAdapter(ArrayList<ProductCard> persons){
         this.persons = persons;
     }
     @Override

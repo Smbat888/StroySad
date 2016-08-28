@@ -1,6 +1,7 @@
 package com.example.smbat.myapplication.activities;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -13,6 +14,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.example.smbat.myapplication.R;
@@ -40,6 +42,15 @@ public class MainActivity extends AppCompatActivity
         final ListView menuListView = (ListView) findViewById(R.id.menu_list_view);
         MenuListAdapter customAdapter = new MenuListAdapter(this, R.layout.menu_items, menuList);
         menuListView.setAdapter(customAdapter);
+        menuListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                if (i == 1) {
+                    Intent intent = new Intent(MainActivity.this, ProductsActivity.class);
+                    startActivity(intent);
+                }
+            }
+        });
         ViewGroup.LayoutParams params = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
         final DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         DisplayMetrics displayMetrics = new DisplayMetrics();
