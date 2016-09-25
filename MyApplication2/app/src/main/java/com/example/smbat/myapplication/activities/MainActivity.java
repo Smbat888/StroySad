@@ -2,6 +2,7 @@ package com.example.smbat.myapplication.activities;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -37,6 +38,7 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.colorAccent)));
         menuItemsProvider = new MenuItemProvider(getResources(), getPackageName());
         final ArrayList<NavMenuItem> menuList = menuItemsProvider.getMenuItems();
         final ListView menuListView = (ListView) findViewById(R.id.menu_list_view);

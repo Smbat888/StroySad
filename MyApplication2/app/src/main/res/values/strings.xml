@@ -5,4 +5,5 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
+    <string name="product_description">In Android, you can use “android.widget.RatingBar” to display rating bar component in stars icon. The user is able to touch, drag or click on the stars to set the rating value easily.  In this tutorial, we show you how to use XML to display a rating bar, few textviews and a button. When user click on the rating bar’s star, the selected rating value will be displayed in the textview. And, if user clicks on the button, the selected rating value will be displayed as a floating message (toast message).  P.S This project is developed in Eclipse 3.7, and tested with Android 2.3.3.</string>
 </resources>
