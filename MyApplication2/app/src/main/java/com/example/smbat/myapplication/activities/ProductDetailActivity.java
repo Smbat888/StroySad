@@ -1,10 +1,8 @@
 package com.example.smbat.myapplication.activities;
 
 import android.Manifest;
-import android.app.ActionBar;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.ActivityCompat;
@@ -32,14 +30,15 @@ public class ProductDetailActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        supportRequestWindowFeature(Window.FEATURE_ACTION_BAR_OVERLAY);
         setContentView(R.layout.activity_product_detail);
         //get position of product from intent
         int index = getIntent().getIntExtra(ProductsActivity.PRODUCT_SPECIFIC_INDEX_KEY,0);
         productsProvider = new ProductsProvider(getResources(),getPackageName());
         products = productsProvider.getProductCards();
-        //set toolbar title
+        //set toolbar title and set appbar custom background
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.colorAccent)));
+        getSupportActionBar().setBackgroundDrawable(getResources().getDrawable(R.drawable.gradient_bckground));
         setTitle(products.get(index).getProductTitle());
         //Find views
         ImageView productImage = (ImageView) findViewById(R.id.productImage);
@@ -94,6 +93,7 @@ public class ProductDetailActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent emailIntent = new Intent(Intent.ACTION_SENDTO);
+                emailIntent.setType("text/plain");
                 emailIntent.setData(Uri.parse("mailto:developer@example.com"));
             }
         });

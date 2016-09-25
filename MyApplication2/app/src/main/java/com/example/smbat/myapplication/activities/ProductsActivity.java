@@ -14,6 +14,7 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -38,10 +39,10 @@ public class ProductsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        supportRequestWindowFeature(Window.FEATURE_ACTION_BAR_OVERLAY);
         setContentView(R.layout.activity_products);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.colorAccent)));
-
+        getSupportActionBar().setBackgroundDrawable(getResources().getDrawable(R.drawable.gradient_bckground));
         RecyclerView rv = (RecyclerView)findViewById(R.id.recycler_view);
         rv.setHasFixedSize(true);
         LinearLayoutManager llm = new LinearLayoutManager(this);
@@ -54,14 +55,13 @@ public class ProductsActivity extends AppCompatActivity {
                 new RecyclerItemClickListener(getBaseContext(),rv, new RecyclerItemClickListener.OnItemClickListener() {
 
                     @Override public boolean onItemClick(View view, int position) {
-                        System.out.println(" ================= position " + position);
+                        showMore(position);
                         return false;
                     }
 
                     @Override
                     public void onItemLongClick(View view, int position) {
                         showItemDialog(position);
-                        System.out.println(" ================= position  from long click " + position);
                     }
                 })
         );
@@ -94,9 +94,8 @@ public class ProductsActivity extends AppCompatActivity {
                 showMore(position);
             }
         });
-
         //set on click for close button
-        ImageButton dialogButton = (ImageButton) dialog.findViewById(R.id.dialogButtonOK);
+        ImageButton dialogButton = (ImageButton) dialog.findViewById(R.id.closeIcon);
         // if button is clicked, close the custom dialog
         dialogButton.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -7,14 +7,24 @@ public class ProductCard {
     int productImage;
     String productTitle;
     String productPrice;
+    String productDescription;
 
     public ProductCard() {
     }
 
-    public ProductCard(int productImage, String productTitle, String productPrice) {
+    public ProductCard(int productImage, String productTitle, String productPrice,String productDescription) {
         this.productImage = productImage;
         this.productTitle = productTitle;
         this.productPrice = productPrice;
+        this.productDescription = productDescription;
+    }
+
+    public String getProductDescription() {
+        return productDescription;
+    }
+
+    public void setProductDescription(String productDescription) {
+        this.productDescription = productDescription;
     }
 
     public int getProductImage() {

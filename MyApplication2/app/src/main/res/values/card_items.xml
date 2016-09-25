@@ -18,11 +18,13 @@
         <item>product_1</item>
         <item>Product1</item>
         <item>Price1</item>
+        <item>Description1</item>
     </string-array>
 
     <string-array name="card_item_2">
         <item>product_2</item>
         <item>Product2</item>
         <item>Price2</item>
+        <item>Description2</item>
     </string-array>
 </resources>

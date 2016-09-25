@@ -8,9 +8,9 @@
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="#000000"
+        android:textColor="@color/colorBlueBright"
         android:text="title"
-        android:textSize="18sp"
+        android:textSize="22sp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 
@@ -19,15 +19,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:scaleType="centerCrop"
+        android:layout_below="@id/title"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
         android:src="@drawable/product_1" />
 
     <TextView
         android:id="@+id/price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="#000000"
+        android:textColor="@color/colorAccent"
         android:text="price"
         android:textSize="18sp"
         android:layout_alignParentRight="true"
@@ -48,7 +48,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="0.5"
             android:background="@drawable/call_button_bck"
-            android:text="CALL"
+            android:text="@string/call"
             android:gravity="center"
             android:textColor="@color/cardview_light_background"/>
 
@@ -59,13 +59,13 @@
             android:layout_weight="0.5"
             android:background="@drawable/more_button_bck"
             android:gravity="center"
-            android:text="MORE"
+            android:text="@string/more"
             android:textColor="@color/cardview_light_background"/>
 
     </LinearLayout>
 
     <ImageButton
-        android:id="@+id/dialogButtonOK"
+        android:id="@+id/closeIcon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/close_icon"
