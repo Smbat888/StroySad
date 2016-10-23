@@ -4,19 +4,29 @@ package com.example.smbat.myapplication.models;
  * Created by smbat on 8/8/16.
  */
 public class ProductCard {
-    int productImage;
-    String productTitle;
-    String productPrice;
-    String productDescription;
+    private int id;
+    private int productImage;
+    private String productTitle;
+    private String productPrice;
+    private String productDescription;
 
     public ProductCard() {
     }
 
-    public ProductCard(int productImage, String productTitle, String productPrice,String productDescription) {
+    public ProductCard(int id, int productImage, String productTitle, String productPrice, String productDescription) {
+        this.id = id;
         this.productImage = productImage;
         this.productTitle = productTitle;
         this.productPrice = productPrice;
         this.productDescription = productDescription;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getProductDescription() {
